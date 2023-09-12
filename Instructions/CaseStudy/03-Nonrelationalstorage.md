@@ -27,16 +27,31 @@ Tailwind Traders wants to reduce storage costs by reducing duplicate content and
 
 1. Design a storage solution for Tailwind Traders. 
 
-      * What type of data is represented? 
+      * What type of data is represented?
+  
+        Data is mainly unstructured, non-relational file data. Hierarchy could be interesting.
 
       * What factors will you consider in your design?
+  
+        Need for hierarchy for easy navigation. Security. Price efficiency. 
 
       * Will you use blob access tiers?
 
+        Yes - a hot, cold, cool 'caching' mechanism can be used.
+        Everything gets uploaded in cool; whenever it is accessed, it resides for X amount of time in hot. After a time it goes to cold and after that to cool.
+
       * Will you use immutable storage?
 
+        The visual media can be immutable.
+        
       * How will the content be securely accessed?
 
-2.  Your solution should consider the media, marketing literature, and corporate documents. Your recommendations may be different depending on the data. Be prepared to discuss your decisions. 
+          Media will be secured by firewall; allowing all incoming traffic but with limitations to avoid ddos
+        Marketing information will be secured to only allow company IP's with private endpoint.
+        Sensitive corporate data will be secured with RBAC
+        
+        
+
+1.  Your solution should consider the media, marketing literature, and corporate documents. Your recommendations may be different depending on the data. Be prepared to discuss your decisions. 
 
 How are you incorporating the Well Architected Framework pillars to produce a high quality, stable, and efficient cloud architecture?
